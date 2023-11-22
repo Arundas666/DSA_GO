@@ -1,0 +1,13 @@
+go 1.21.4
+
+use (
+	./Arrays/intersection
+	./LinkedLists
+	./Strings/ReplaceAlphabet
+	./Strings/ReverseString
+	./Strings/CountVowelsConsonants
+	./Strings/Palindrome
+	./LinearSearch/BasicSearch
+	./LinearSearch/Multipleoccurence
+	
+)

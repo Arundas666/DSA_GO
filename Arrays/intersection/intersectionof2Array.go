@@ -1,4 +1,4 @@
-package questions
+package main
 
 // Given two integer arrays nums1 and nums2, return an
 // array of their intersection. Each element in the result must be
@@ -21,4 +21,8 @@ func Intersection(nums1 []int, nums2 []int) []int {
 	}
 
 	return result
+}
+
+func main(){
+	
 }
