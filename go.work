@@ -1,13 +1,27 @@
 go 1.21.4
 
 use (
-	./Arrays/intersection
-	./LinkedLists
+./Arrays
 	./Strings/ReplaceAlphabet
 	./Strings/ReverseString
 	./Strings/CountVowelsConsonants
 	./Strings/Palindrome
 	./LinearSearch/BasicSearch
 	./LinearSearch/Multipleoccurence
+	./BinarySearch/Sample
+	./BinarySearch/REcursiveBinarySearch
+	./BinarySearch/closesElement
+	./Recursion/ReverseAString
+	./Recursion/SumOfArray
+	./Recursion/factorial
+	./LinkedLists/addNode
+	./LinkedLists/ArrayToLL
+	./LinkedLists/CreateLL
+	./LinkedLists/DeleteLL
+	./LinkedLists/DoubleLL
+	./LinkedLists/InsertData
+	./LinkedLists/RemoveDuplicats
+	./LinkedLists/ReversePrinting
+	
 	
 )

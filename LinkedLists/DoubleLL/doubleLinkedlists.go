@@ -1,4 +1,4 @@
-package Qns
+package main
 
 import "fmt"
 
@@ -14,6 +14,16 @@ type DoubleLL struct {
 
 func NewDoubleLL() *DoubleLL {
 	return &DoubleLL{}
+}
+func main() {
+	dll := NewDoubleLL()
+	dll.AddingIntoDLL(1)
+	dll.AddingIntoDLL(2)
+	dll.AddingIntoDLL(3)
+	dll.AddingIntoDLL(4)
+	dll.DisplayDataForward()
+	dll.DisplayDataReverse()
+
 }
 
 func (dll *DoubleLL) AddingIntoDLL(data int) {

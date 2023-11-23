@@ -1,4 +1,4 @@
-package questions
+package sear
 
 import "fmt"
 

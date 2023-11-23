@@ -1,8 +1,22 @@
-package Qns
+package main
 
 import "fmt"
 
-func (dll *DoubleLL) ArraytoLinkedList(arr []int) *Node {
+type Node struct {
+	data int
+	next *Node
+}
+type LinkedList struct {
+	head *Node
+}
+
+func main() {
+	var ll LinkedList
+	arr := []int{1, 2, 3, 4, 5, 6, 7}
+	ll.head = ArraytoLinkedList(arr)
+	PrintLinkedListFromHead(ll.head)
+}
+func ArraytoLinkedList(arr []int) *Node {
 	var head, tail *Node
 
 	for _, val := range arr {
@@ -19,7 +33,6 @@ func (dll *DoubleLL) ArraytoLinkedList(arr []int) *Node {
 			tail = newNode
 		}
 	}
-
 	return head
 }
 func PrintLinkedListFromHead(head *Node) {

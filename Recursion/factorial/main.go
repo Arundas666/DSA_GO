@@ -5,7 +5,6 @@ import "fmt"
 func main() {
 	result := factorial(4)
 	fmt.Println("Factorial is ", result)
-
 }
 
 func factorial(num int) int {

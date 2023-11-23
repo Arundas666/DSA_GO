@@ -1,4 +1,4 @@
-package Qns
+package main
 
 import "fmt"
 
@@ -11,6 +11,17 @@ type LinkedList struct {
 	head *Node
 }
 
+func main() {
+	var ll LinkedList
+	ll.AppendLL(1)
+	ll.AppendLL(2)
+	ll.AppendLL(3)
+	ll.AppendLL(4)
+	ll.AppendLL(5)
+	ll.AppendLL(6)
+	ll.DisplayLL()
+
+}
 func NewLinkedList() *LinkedList {
 	return &LinkedList{}
 }
