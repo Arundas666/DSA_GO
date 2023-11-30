@@ -3,9 +3,7 @@ package main
 import "fmt"
 
 func replaceAlphabet(str string, n int) string {
-	
 	runes := []rune(str)
-
 	for i := 0; i < len(runes); i++ {
 		char := runes[i]
 		ascii := int(char)
@@ -17,8 +15,6 @@ func replaceAlphabet(str string, n int) string {
 
 		runes[i] = char
 	}
-
-	
 	return string(runes)
 }
 

@@ -44,18 +44,22 @@ func InsertNodeBeforeValue(head *Node, value int, newData int) *Node {
 	if head == nil {
 		return newNode
 	}
-	if head.data==value{
-		newNode.next=head
-		head=newNode
+	if head.data == value {
+		newNode.next = head
+		head = newNode
+		return newNode
 	}
+
 	currentNode := head
 	var prevNod *Node
 	for currentNode.data != value {
 		prevNod = currentNode
 		currentNode = currentNode.next
 	}
+
 	prevNod.next = newNode
 	newNode.next = currentNode
+
 	return head
 }
 

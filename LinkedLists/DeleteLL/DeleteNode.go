@@ -17,7 +17,7 @@ func main() {
 	ll.head.next.next = &Node{data: 4}
 	ll.head.next.next.next = &Node{data: 4}
 	ll.head.next.next.next.next = &Node{data: 5}
-	ll.head = DeleteNode(ll.head, 1)
+	ll.head = DeleteNode(ll.head, 5)
 	PrintFromHdhead(ll.head)
 }
 func DeleteNode(head *Node, value int) *Node {

@@ -15,6 +15,7 @@ func Palindrome(str string) {
 			count = 1
 
 		}
+		
 
 	}
 	if count == 1 {

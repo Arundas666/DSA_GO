@@ -4,6 +4,7 @@ import "fmt"
 
 // Implement the binary search algorithm using a recursive approach.
 // Compare its performance with the iterative version.
+
 func main() {
 	array := []int{2, 5, 8, 12, 165, 23}
 	targetElement := 12

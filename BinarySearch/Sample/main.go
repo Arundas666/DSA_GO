@@ -15,21 +15,17 @@ func main() {
 func BinarySearch(arr []int, target int) int {
 	l := 0
 	e := len(arr) - 1
-
 	for l <= e {
 		mid := (l + e) / 2
-
 		if arr[mid] == target {
 			return mid
 		}
 		if arr[mid] < target {
 			l = mid + 1
-
 		}
 		if arr[mid] > target {
 			e = mid - 1
 		}
 	}
 	return -1
-
 }

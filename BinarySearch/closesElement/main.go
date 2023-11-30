@@ -34,7 +34,6 @@ func Closest(arr []int, target int) int {
 			clos = arr[mid]
 
 		}
-
 		if arr[mid] == target {
 			return mid
 		}
@@ -46,5 +45,4 @@ func Closest(arr []int, target int) int {
 		}
 	}
 	return closestIndex
-
 }

@@ -2,6 +2,7 @@ go 1.21.4
 
 use (
 ./Arrays
+./LinearSearch/IndexOfTheSmallest
 	./Strings/ReplaceAlphabet
 	./Strings/ReverseString
 	./Strings/CountVowelsConsonants
@@ -22,6 +23,7 @@ use (
 	./LinkedLists/InsertData
 	./LinkedLists/RemoveDuplicats
 	./LinkedLists/ReversePrinting
+	
 	
 	
 )

@@ -4,7 +4,7 @@ import "fmt"
 
 func arraySum(arr []int, index int) int {
 	if index < 0 {
-		return 0 
+		return 0
 	}
 	return arr[index] + arraySum(arr, index-1)
 }

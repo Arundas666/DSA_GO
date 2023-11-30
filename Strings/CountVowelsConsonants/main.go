@@ -13,6 +13,7 @@ func CountVowelsAndConsonants(str string) (int, int) {
 		switch char {
 		case 'a', 'e', 'i', 'o', 'u','A','E','I','O','U':
 			vowels++
+			
 		case ' ', '.', '!', '$':
 		default:
 			consonant++
