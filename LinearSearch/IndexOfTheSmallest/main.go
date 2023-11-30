@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	array := []int{16, 5, 8, 12, 16, 23, 16}
+	array := []int{0, 5, 8, 12, 16, 23, 16}
 
 	result := SmallestElement(array)
 	if result == -1 {
@@ -14,7 +14,7 @@ func main() {
 }
 func SmallestElement(arr []int) int {
 	sm := arr[0]
-	index := -1
+	index := 0
 	for i := 0; i < len(arr); i++ {
 		if arr[i] < sm {
 			sm = arr[i]
