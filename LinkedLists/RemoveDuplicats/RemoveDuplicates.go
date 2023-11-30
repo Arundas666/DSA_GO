@@ -12,14 +12,17 @@ type LinkedList struct {
 
 func main() {
 	var ll LinkedList
-	ll.head = &Node{data: 1}
-	ll.head.next = &Node{data: 1}
-	ll.head.next.next = &Node{data: 2}
+	ll.head = &Node{data: 2}
+	ll.head.next = &Node{data: 2}
+	ll.head.next.next = &Node{data: 1}
 	ll.head.next.next.next = &Node{data: 2}
 	ll.head.next.next.next.next = &Node{data: 2}
 	ll.head = RemoveDuplicates(ll.head)
-	PrintFH(ll.head)
 
+	PrintFH(ll.head)
+	fmt.Println(" ")
+	ll.head = RemoveDuplicatesForUnSorted(ll.head)
+	PrintFH(ll.head)
 }
 func RemoveDuplicates(head *Node) *Node {
 	currentNode := head
@@ -29,6 +32,23 @@ func RemoveDuplicates(head *Node) *Node {
 		} else {
 			currentNode = currentNode.next
 		}
+	}
+	return head
+}
+func RemoveDuplicatesForUnSorted(head *Node) *Node {
+	current := head
+	prev := &Node{}
+	var seen = make(map[int]bool)
+
+	for current != nil {
+		if seen[current.data] {
+			prev.next = current.next
+		} else {
+			seen[current.data] = true
+			prev = current
+		}
+		current = current.next
+
 	}
 	return head
 }
