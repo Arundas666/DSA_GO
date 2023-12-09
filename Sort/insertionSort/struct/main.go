@@ -13,7 +13,6 @@ func main() {
 	}
 	a := sort(arr)
 	fmt.Println(a)
-
 }
 func sort(nums []person) []person {
 	for i := 0; i < len(nums); i++ {

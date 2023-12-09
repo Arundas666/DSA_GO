@@ -21,7 +21,6 @@ func main() {
 	sortAplabaticaly(a)
 	fmt.Println(a)
 }
-
 func sortAplabaticaly(p []Presons) {
 	for i := 0; i < len(p)-1; i++ {
 		swap:=0

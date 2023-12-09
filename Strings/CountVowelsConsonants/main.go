@@ -17,9 +17,7 @@ func CountVowelsAndConsonants(str string) (int, int) {
 		case ' ', '.', '!', '$':
 		default:
 			consonant++
-
 		}
 	}
-
 	return vowels, consonant
 }

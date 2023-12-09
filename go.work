@@ -23,7 +23,8 @@ use (
 	./LinkedLists/InsertData
 	./LinkedLists/RemoveDuplicats
 	./LinkedLists/ReversePrinting
-	
+	./Sort/BubbleSort/Ascending
+	./Sort/BubbleSort/Descending
 	
 	
 )
