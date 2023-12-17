@@ -15,12 +15,11 @@ type bucketNode struct {
 	key      string
 	nextNode *bucketNode
 }
-
 //insert will take a key and add it into the hashtable array
 func (h *HashTable) Insert(key string) {
 	index := hash(key)
 	h.array[index].insert(key)
-}
+} 
 
 //search will take the key and return true if it is in the hash table
 func (h *HashTable) Search(key string) bool {

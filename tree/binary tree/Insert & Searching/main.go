@@ -25,26 +25,28 @@ func main() {
 	b.root = addNode(b.root, 4)
 	b.root = addNode(b.root, 3)
 	b.root = addNode(b.root, 8)
-	b.root = delete(b.root, 8)
-
+	b.root = delete(b.root, 111)
+	
+	
+	fmt.Println(" ")
+	fmt.Println(" ")
 	b.printInorder(b.root)
+	
 	fmt.Println(" ")
-	b.PreOrder(b.root)
-	fmt.Println(" ")
-	b.postOrder(b.root)
-	fmt.Println(" ")
+
 	b.contain(7)
+	
+	fmt.Println("isBST", isBST(b.root, 3, 10))
+	b.printInorder(b.root)
+	fmt.Println("IS 6 is there",search(b.root,6))
 	fmt.Println("CLOSEST OF 1 is ", b.closest(1))
 
-	fmt.Println("isBST", isBST(b.root, 1, 10))
-	b.printInorderWithConstraints(b.root,5,7)
 }
 func addNode(root *Node, data int) *Node {
 	if root == nil {
 		root = &Node{data: data, lChild: nil, rChild: nil}
 		return root
 	}
-
 	if data > root.data {
 		root.rChild = addNode(root.rChild, data)
 	} else {
@@ -96,19 +98,17 @@ func delete(root *Node, data int) *Node {
 			root.data = c.data
 			root.rChild = delete(root.rChild, c.data)
 		}
-
 	}
 	return root
-
 }
 func getSuccesor(c *Node) *Node {
+	// to get the smallest key in the right side(in-order-successor)
 	c = c.rChild
 	for c != nil && c.lChild != nil {
 		c = c.lChild
 
 	}
 	return c
-
 }
 func (b *BinarySearchTree) printInorder(node *Node) {
 	if node == nil {
@@ -176,4 +176,17 @@ func (b *BinarySearchTree) printInorderWithConstraints(node *Node, min, max int)
 	fmt.Printf("Value: %d, Min: %d, Max: %d\n", node.data, min, max)
 	b.printInorderWithConstraints(node.lChild, min, node.data-1)
 	b.printInorderWithConstraints(node.rChild, node.data+1, max)
+}
+func search(root *Node, data int) bool {
+	if root == nil {
+		return false
+	}
+	if root.data == data {
+		return true
+	}
+	if root.data > data {
+		return search(root.lChild, data)
+	} else {
+		return search(root.rChild, data)
+	}
 }

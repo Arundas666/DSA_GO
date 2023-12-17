@@ -1,16 +1,15 @@
 package main
 
 import "fmt"
-
 type maxHeap struct {
 	arr []int
 }
-
 func (h *maxHeap) insert(data int) {
 	h.arr = append(h.arr, data)
-
+	h.shiftUp(len(h.arr)-1)
 }
-func (h *maxHeap) insertHelper(position int) {
+
+func (h *maxHeap) shiftUp(position int) {
 	for position > 0 {
 		parentIdx := parent(position)
 		if h.arr[position] > h.arr[parentIdx] {
@@ -35,7 +34,6 @@ func (h *maxHeap) buildHeap(arr []int) {
 	for i := parent(len(h.arr) - 1); i >= 0; i-- {
 		h.shiftDown(i)
 	}
-
 }
 func (h *maxHeap) shiftDown(currentIdx int) {
 
@@ -90,7 +88,10 @@ func (h *maxHeap)heapSort()[]int{
 func main() {
 	var arr = []int{11, 2, 7, 4,12, 5, 9,10}
     h := &maxHeap{}
+	
+
     h.buildHeap(arr)
+	h.insert(8)
 
     fmt.Println("Original array:")
     display(h.arr)
@@ -99,6 +100,4 @@ func main() {
 
     fmt.Println("Sorted array:")
     display(h.arr)
-
-
 }

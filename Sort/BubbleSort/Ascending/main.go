@@ -9,6 +9,7 @@ func main() {
 	fmt.Println(arr)
 
 }
+
 func asc(nums []int) []int {
 	for i := 0; i < len(nums); i++ {
 		swap := 0
@@ -22,6 +23,5 @@ func asc(nums []int) []int {
 			break
 		}
 	}
-
 	return nums
 }

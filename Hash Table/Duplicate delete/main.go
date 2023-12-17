@@ -18,5 +18,5 @@ func duplicateDelete(arr []int) []int {
 		}
 		newTable[nums] = i
 	}
-	return arr
+		return arr
 }

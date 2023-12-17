@@ -3,27 +3,23 @@ package main
 import "fmt"
 
 func main() {
-	// var arr = []int{89, 4, 6, 4, 3, 6, 2, 1, 0}
-	// fmt.Println(mergeSort(arr))
-	var arr = []int{2, 4, 1, 6, 3, 8, 2}
-	fmt.Println(mergeSort(arr))
-
+	var arr = []int{4, 6, 2, 1, 6, 1}
+	fmt.Println(mergesort(arr))
 }
-func mergeSort(arr []int) []int {
+func mergesort(arr []int) []int {
 	if len(arr) < 2 {
 		return arr
 	}
 	mid := len(arr) / 2
-	left := mergeSort(arr[:mid])
-	right := mergeSort(arr[mid:])
-	return merge(left, right)
-
+	left := mergesort(arr[:mid])
+	right := mergesort(arr[mid:])
+	result := merge(left, right)
+	return result
 }
 func merge(left []int, right []int) []int {
-
-	var result = make([]int, 0, len(left)+len(right))
-	i:=0
-	j:=0
+	i, j := 0, 0
+	var result []int
+	
 	for i < len(left) && j < len(right) {
 		if left[i] < right[j] {
 			result = append(result, left[i])
@@ -35,5 +31,6 @@ func merge(left []int, right []int) []int {
 	}
 	result = append(result, left[i:]...)
 	result = append(result, right[j:]...)
+
 	return result
 }

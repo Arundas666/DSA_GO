@@ -25,6 +25,7 @@ use (
 	./LinkedLists/ReversePrinting
 	./Sort/BubbleSort/Ascending
 	./Sort/BubbleSort/Descending
+	./tree/tree
 	
 	
 )

@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"math"
+	
 )
 
 type node struct {
@@ -21,8 +21,7 @@ func maxDepth(root *node) int {
 	}
 	leftMax := maxDepth(root.left)
 	rightMax := maxDepth(root.right)
-	return int(math.Max(float64(leftMax), float64(rightMax)) + 1)
-
+	return max(leftMax,rightMax)+1
 }
 func addNode(root *node, data int) *node {
 	if root == nil {

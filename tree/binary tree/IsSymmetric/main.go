@@ -32,7 +32,7 @@ func (b *BinaryTree) SymmetricOrNot() bool {
 	return isSymmetric( b.root.left, b.root.right)
 
 }
-
+//only looking the structure not actual value
 func isSymmetric(left *node, right *node) bool {
     if left == nil && right == nil {
         return true
