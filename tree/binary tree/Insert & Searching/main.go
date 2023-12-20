@@ -26,19 +26,19 @@ func main() {
 	b.root = addNode(b.root, 3)
 	b.root = addNode(b.root, 8)
 	b.root = delete(b.root, 111)
-	
-	
+
 	fmt.Println(" ")
 	fmt.Println(" ")
 	b.printInorder(b.root)
-	
+
 	fmt.Println(" ")
 
 	b.contain(7)
-	
+
 	fmt.Println("isBST", isBST(b.root, 3, 10))
 	b.printInorder(b.root)
-	fmt.Println("IS 6 is there",search(b.root,6))
+	fmt.Println("\n IS 6 is there", searchRecursion(b.root, 6))
+	fmt.Println("searchin loop ", searchUsingLoop(b.root, 6))
 	fmt.Println("CLOSEST OF 1 is ", b.closest(1))
 
 }
@@ -177,7 +177,8 @@ func (b *BinarySearchTree) printInorderWithConstraints(node *Node, min, max int)
 	b.printInorderWithConstraints(node.lChild, min, node.data-1)
 	b.printInorderWithConstraints(node.rChild, node.data+1, max)
 }
-func search(root *Node, data int) bool {
+
+func searchRecursion(root *Node, data int) bool {
 	if root == nil {
 		return false
 	}
@@ -185,8 +186,26 @@ func search(root *Node, data int) bool {
 		return true
 	}
 	if root.data > data {
-		return search(root.lChild, data)
+		return searchRecursion(root.lChild, data)
 	} else {
-		return search(root.rChild, data)
+		return searchRecursion(root.rChild, data)
 	}
+}
+func searchUsingLoop(root *Node, data int) bool {
+	if root == nil {
+		return false
+	}
+	currentNode := root
+	for currentNode != nil {
+		if currentNode.data > data {
+			currentNode = currentNode.lChild
+			continue
+		}
+		if currentNode.data < data {
+			currentNode = currentNode.rChild
+			continue
+		}
+		return true
+	}
+	return false
 }
